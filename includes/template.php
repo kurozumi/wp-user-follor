@@ -2,7 +2,7 @@
 
 function wuf_get_follow_unfollow_links($follow_id = null) {
 
-  global $user_ID;
+  global $user_ID, $WP_User_Follow;
 
   if (empty($follow_id))
     return;
@@ -13,12 +13,10 @@ function wuf_get_follow_unfollow_links($follow_id = null) {
   if ($follow_id == $user_ID)
     return;
 
-  $User = new WUF_User();
-
   ob_start();
   ?>
   <div class="follow-links">
-  <?php if ($User->is_following($follow_id)) { ?>
+  <?php if ($WP_User_Follow->is_following($follow_id)) { ?>
       <a href="#" class="unfollow followed" data-user-id="<?php echo $user_ID; ?>" data-follow-id="<?php echo $follow_id; ?>">unfollow</a>
       <a href="#" class="follow" style="display:none;" data-user-id="<?php echo $user_ID; ?>" data-follow-id="<?php echo $follow_id; ?>">follow</a>
   <?php } else { ?>

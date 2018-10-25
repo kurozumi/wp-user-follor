@@ -9,10 +9,10 @@ add_shortcode('follow_links', function($atts, $content = null) {
 });
 
 add_shortcode('following_posts', function() {
-  $User = new WUF_User();
-
-  if (empty($User->get_following()))
+  global $WP_User_Follow;
+  
+  if (empty($WP_User_Follow->get_following()))
     return;
 
-  return wuf_get_following_posts($User->get_following());
+  return wuf_get_following_posts($WP_User_Follow->get_following());
 });

@@ -2,9 +2,10 @@
 
 
 function wuf_ajax_follow() {
+  global $WP_User_Follow;
+  
   if (isset($_POST['user_id']) && isset($_POST['follow_id'])) {
-    $User = new WUF_User();
-    if ($User->follow(absint($_POST['follow_id']))) {
+    if ($WP_User_Follow->follow(absint($_POST['follow_id']))) {
       wp_send_json_success();
     }
     
@@ -14,9 +15,10 @@ function wuf_ajax_follow() {
 }
 
 function wuf_ajax_unfollow() {
+  global $WP_User_Follow;
+  
   if (isset($_POST['user_id']) && isset($_POST['follow_id'])) {
-    $User = new WUF_User();
-    if ($User->unfollow(absint($_POST['follow_id']))) {
+    if ($WP_User_Follow->unfollow(absint($_POST['follow_id']))) {
       wp_send_json_success();
     }
   }
