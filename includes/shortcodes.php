@@ -1,7 +1,5 @@
 <?php
 
-namespace UserFollowing;
-
 add_shortcode('follow_links', function($atts, $content = null){
   extract(shortcode_atts(array(
       'follow_id' => get_the_author_meta('ID')
@@ -13,7 +11,7 @@ add_shortcode('follow_links', function($atts, $content = null){
 
 add_shortcode('following_posts', function() {
 
-  $User = new User();
+  $User = new WUP_User();
   
   if (empty($User->get_following()))
     return;

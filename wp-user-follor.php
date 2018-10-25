@@ -42,8 +42,8 @@ add_action('init', function(){
   |--------------------------------------------------------------------------
  */
 
-include_once( UF_FOLLOW_DIR . '/includes/class-user-follor.php' );
-include_once( UF_FOLLOW_DIR . '/includes/actions.php' );
-include_once( UF_FOLLOW_DIR . '/includes/scripts.php' );
-include_once( UF_FOLLOW_DIR . '/includes/shortcodes.php' );
-include_once( UF_FOLLOW_DIR . '/includes/display-functions.php' );
+include_once( WUF_FOLLOW_DIR . '/includes/class-user.php' );
+include_once( WUF_FOLLOW_DIR . '/includes/actions.php' );
+include_once( WUF_FOLLOW_DIR . '/includes/scripts.php' );
+include_once( WUF_FOLLOW_DIR . '/includes/shortcodes.php' );
+include_once( WUF_FOLLOW_DIR . '/includes/display-functions.php' );

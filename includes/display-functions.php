@@ -1,7 +1,5 @@
 <?php
 
-namespace UserFollowing;
-
 /**
  * Retrieves the follow / unfollow links
  *
@@ -23,7 +21,7 @@ function wuf_get_follow_unfollow_links($follow_id = null) {
   if ($follow_id == $user_ID)
     return;
   
-  $User = new User();
+  $User = new WUP_User();
 
   ob_start();
   ?>
@@ -35,7 +33,7 @@ function wuf_get_follow_unfollow_links($follow_id = null) {
       <a href="#" class="follow" data-user-id="<?php echo $user_ID; ?>" data-follow-id="<?php echo $follow_id; ?>">follow</a>
       <a href="#" class="followed unfollow" style="display:none;" data-user-id="<?php echo $user_ID; ?>" data-follow-id="<?php echo $follow_id; ?>">unfollow</a>
     <?php } ?>
-    <img src="<?php echo UF_FOLLOW_URL; ?>/assets/images/loading.gif" class="uf-ajax" style="display:none;"/>
+    <img src="<?php echo WUF_FOLLOW_URL; ?>/assets/images/loading.gif" class="uf-ajax" style="display:none;"/>
   </div>
   <?php
   return ob_get_clean();
