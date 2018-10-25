@@ -42,8 +42,6 @@ add_action('init', function(){
   |--------------------------------------------------------------------------
  */
 
-include_once( WUF_FOLLOW_DIR . '/includes/class-user.php' );
-include_once( WUF_FOLLOW_DIR . '/includes/actions.php' );
-include_once( WUF_FOLLOW_DIR . '/includes/scripts.php' );
-include_once( WUF_FOLLOW_DIR . '/includes/shortcodes.php' );
-include_once( WUF_FOLLOW_DIR . '/includes/display-functions.php' );
+foreach ( glob( WUF_FOLLOW_DIR . '/includes/*.php' ) as $file ) {
+  require_once $file;
+}

@@ -1,5 +1,5 @@
 <?php
-class WUP_User {
+class WUF_User {
 
   const FOLLOWING_KEY = "_wuf_following";
   const FOLLOWERS_KEY = "_wuf_followers";

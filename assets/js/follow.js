@@ -14,7 +14,7 @@ jQuery(document).ready(function ($) {
         }
 
         var data = {
-            action: $this.hasClass('follow') ? 'follow' : 'unfollow',
+            action: $this.hasClass('follow') ? 'wuf-follow' : 'wuf-unfollow',
             user_id: $this.data('user-id'),
             follow_id: $this.data('follow-id'),
             nonce: wuf_vars.nonce
@@ -23,7 +23,7 @@ jQuery(document).ready(function ($) {
         $('img.wuf-ajax', $div).show();
 
         $.post(wuf_vars.ajaxurl, data, function (response) {
-            if (response == 'success') {
+            if (response.success) {
                 $('a', $div).toggle();
             } else {
                 alert(wuf_vars.processing_error);
