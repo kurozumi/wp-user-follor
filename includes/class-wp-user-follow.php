@@ -4,10 +4,6 @@ $WP_User_Follow = new WP_User_Follow();
 
 class WP_User_Follow {
 
-  const FOLLOWING_KEY = "_wuf_following";
-  const FOLLOWERS_KEY = "_wuf_followers";
-  const FOLLOWED_BY_COUNT_KEY = "_wuf_followed_by_count";
-  
   private $User;
   private $Following;
   private $Followers;
